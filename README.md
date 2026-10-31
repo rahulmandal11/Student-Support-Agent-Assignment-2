@@ -42,9 +42,6 @@ The demo account IDs are `STU001`, `STU002`, `STF001`, and `ADM001`. Use the pas
 ```powershell
 python app.py
 ```
-
-Open [http://127.0.0.1:5000](http://127.0.0.1:5000). The development server binds to loopback only.
-
 ## Verify
 
 ```powershell
