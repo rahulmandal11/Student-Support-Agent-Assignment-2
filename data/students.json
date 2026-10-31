@@ -1,0 +1,4 @@
+[
+  {"id":"STU001","name":"Demo Student One","programme":"PGDM-AI","email":"student1@example.test","fee_total":240000,"fee_paid":180000,"fee_due":"2026-11-05","scholarship":"Merit scholarship","scholarship_status":"approved","scholarship_amount":30000},
+  {"id":"STU002","name":"Demo Student Two","programme":"PGDM-BDA","email":"student2@example.test","fee_total":240000,"fee_paid":240000,"fee_due":"2026-11-05","scholarship":"Need-based scholarship","scholarship_status":"under review","scholarship_amount":0}
+]

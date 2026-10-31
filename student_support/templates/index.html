@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaiju · Campus Desk student support</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png" sizes="48x48">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/akou-logo.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M4 13 6.5 5h11l2.5 8v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M4 13h5l1 2h4l1-2h5"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="18.5" cy="12" r="1.4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-6.5 18-4-7.5L3 9.5z"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 2.5h12v19l-3-2-3 2-3-2-3 2z"/><path d="M9 7.5h6M9 11.5h6M9 15.5h3.5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v5"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 20V4M3 8l4-4 4 4M17 4v16M21 16l-4 4-4-4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.6 5.1A9.7 9.7 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-2.6 3.5M6.6 6.6C3.7 8.4 2 12 2 12s3.5 7 10 7a9.6 9.6 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2M3 3l18 18"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M15 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4M10 17l5-5-5-5M15 12H3"/></symbol>
+  </svg>
+
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+  <main id="login-screen" class="login-layout">
+    <div class="login-shell">
+      <section class="login-story">
+        <a class="brand" href="/" aria-label="Kaiju home"><img class="brand-logo" src="{{ url_for('static', filename='img/akou-logo.png') }}" alt="" width="44" height="44"><span class="brand-text"><strong>Kaiju</strong><small>Your Campus Desk assistant</small></span></a>
+        <div class="login-copy">
+          <h1>Welcome to <span>Kaiju</span></h1>
+          <p class="intro">Your friendly student support assistant for fees, scholarships and academic policies.</p>
+          <ul class="feature-list">
+            <li><svg class="icon"><use href="#i-chat"/></svg> Answer your questions</li>
+            <li><svg class="icon"><use href="#i-doc"/></svg> Show the policy evidence</li>
+            <li><svg class="icon"><use href="#i-inbox"/></svg> Raise support requests</li>
+            <li><svg class="icon"><use href="#i-shield"/></svg> Keep you in control of changes</li>
+          </ul>
+        </div>
+        <img class="login-mascot" src="{{ url_for('static', filename='img/akou-mascot.png') }}" alt="" width="178" height="185">
+        <p class="sample-note">Coursework demonstration · Fictional institute and student records</p>
+      </section>
+      <section class="login-form-area">
+        <form id="login-form" class="login-form">
+          <h2>Sign in to Kaiju</h2>
+          <fieldset class="role-switch">
+            <legend class="visually-hidden">Account type</legend>
+            <label><input type="radio" name="role" value="student" checked> Student</label>
+            <label><input type="radio" name="role" value="staff"> Staff</label>
+            <label><input type="radio" name="role" value="admin"> Admin</label>
+          </fieldset>
+          <p id="login-intro" class="muted">Continue to your student account. Your session gives the agent access to your own records.</p>
+          <label id="account-id-label" for="account-id">Student ID</label>
+          <div class="input-icon"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><input id="account-id" name="account_id" autocomplete="username" placeholder="STU001" required maxlength="20"></div>
+          <label for="password">Password</label>
+          <div class="input-icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Password" required maxlength="200"><button id="password-toggle" type="button" class="icon-button input-action" aria-label="Show password" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"/></svg></button></div>
+          <p id="login-error" class="error" role="alert" hidden></p>
+          <button type="submit" class="primary wide">Sign in</button>
+          <p class="divider"><span>or start with a demo account</span></p>
+          <div class="demo-accounts">
+            <button type="button" class="secondary wide" data-demo-id="STU001" data-demo-role="student"><span class="avatar small-avatar" aria-hidden="true">DS</span> STU001 · Demo Student One</button>
+            <button type="button" class="secondary wide" data-demo-id="STU002" data-demo-role="student"><span class="avatar small-avatar" aria-hidden="true">DS</span> STU002 · Demo Student Two</button>
+            <button type="button" class="secondary wide" data-demo-id="STF001" data-demo-role="staff" hidden><span class="avatar small-avatar" aria-hidden="true">DS</span> STF001 · Demo Staff · Student services</button>
+            <button type="button" class="secondary wide" data-demo-id="ADM001" data-demo-role="admin" hidden><span class="avatar small-avatar" aria-hidden="true">DA</span> ADM001 · Demo Administrator · Administrator</button>
+          </div>
+          <p class="demo-note">Use the local demo password configured in your ignored <code>.env</code> file. Never enter real credentials in chat.</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div id="workspace" class="workspace" hidden>
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar">
+      <div class="sidebar-head">
+        <a class="brand" href="/" aria-label="Kaiju home"><img class="brand-logo" src="{{ url_for('static', filename='img/akou-logo.png') }}" alt="" width="44" height="44"><span class="brand-text"><strong>Kaiju</strong><small>Your Campus Desk assistant</small></span></a>
+        <button id="sidebar-toggle" class="icon-button bordered" type="button" aria-label="Hide sidebar" aria-controls="sidebar"><svg class="icon" aria-hidden="true"><use href="#i-panel"/></svg></button>
+      </div>
+      <button id="new-chat" class="primary wide new-chat" type="button"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg> New Chat</button>
+      <div class="search-box"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><label class="visually-hidden" for="chat-search">Search chat history</label><input id="chat-search" type="search" placeholder="Search chats…" autocomplete="off" maxlength="100"></div>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="chat" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg> Ask Kaiju</button>
+        <button class="nav-item" data-view="memory"><svg class="icon" aria-hidden="true"><use href="#i-bookmark"/></svg> Remembered facts</button>
+        <button class="nav-item" data-view="approvals"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Approvals <span id="approval-count" class="count" hidden></span></button>
+        <button class="nav-item" data-view="tickets"><svg class="icon" aria-hidden="true"><use href="#i-inbox"/></svg> Support requests <span id="ticket-count" class="count" hidden></span></button>
+        <button class="nav-item" data-view="activity"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg> Traces & audit</button>
+      </nav>
+      <section class="recent" aria-labelledby="recent-heading">
+        <h2 id="recent-heading">Chat history</h2>
+        <ul id="recent-list" class="recent-list"></ul>
+        <p id="recent-empty" class="recent-empty">Your conversations are saved here so you can come back to them.</p>
+      </section>
+      <div class="sidebar-bottom">
+        <span class="demo-tag">Fictional data</span>
+        <div class="student-block">
+          <button class="student-link" type="button" data-view="profile" aria-label="Open my profile" title="My profile"><span class="avatar" id="avatar">AS</span><span class="student-text"><strong id="student-name"></strong><small id="student-meta"></small></span></button>
+          <button id="account-button" class="icon-button" type="button" aria-label="Account options" aria-haspopup="true" aria-expanded="false" aria-controls="account-menu"><svg class="icon" aria-hidden="true"><use href="#i-more"/></svg></button>
+          <div id="account-menu" class="account-menu" hidden>
+            <button class="menu-item" type="button" data-view="profile"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg> View profile</button>
+            <button id="logout" class="menu-item" type="button"><svg class="icon" aria-hidden="true"><use href="#i-logout"/></svg> Sign out</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="menu-open" class="icon-button" type="button" aria-label="Show sidebar" aria-controls="sidebar" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+          <div class="topbar-title"><h1 id="topbar-title">New conversation</h1><span class="connection"><span class="status-dot"></span><span id="connection-label">Groq-powered support</span><span class="muted private-note"> · Private to your student account</span></span></div>
+        </div>
+        <div class="topbar-actions">
+          <a class="icon-button" href="/api/export" download aria-label="Export evidence" title="Export evidence"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg></a>
+          <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></button>
+          <button class="icon-button bell" type="button" data-view="approvals" aria-label="Approvals" title="Approvals"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><span id="approval-dot" class="dot" hidden></span></button>
+          <button class="avatar topbar-avatar" id="topbar-avatar" type="button" data-view="profile" aria-label="My profile">AS</button>
+        </div>
+      </header>
+      <div id="config-banner" class="config-banner" hidden><strong>Connect Groq to start chatting.</strong> Add your API key to the local <code>.env</code> file and restart the app. Memory and audit views are available now.</div>
+
+      <section id="view-chat" class="view chat-layout">
+        <div class="conversation">
+          <div id="messages" class="messages" role="log" aria-live="polite" aria-label="Conversation">
+            <div id="welcome" class="welcome">
+              <div class="hero-stage"><img class="hero-mascot" src="{{ url_for('static', filename='img/akou-hero.png') }}" alt="Kaiju, a fluffy blue mascot, peeking over the page" width="430" height="208"></div>
+              <h2>Hi, I’m Kaiju <span class="wave" aria-hidden="true">👋</span></h2>
+              <p>Good to see you, <span id="first-name">there</span>. I’ll find the relevant policy or check your record, and show you what I used.</p>
+              <div class="suggestions">
+                <button data-prompt="What is my current fee status?"><svg class="icon amber" aria-hidden="true"><use href="#i-receipt"/></svg><span><strong>Fee status</strong><small>dues and deadlines</small></span></button>
+                <button data-prompt="What is my scholarship status?"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg><span><strong>Scholarship</strong><small>status and amount</small></span></button>
+                <button data-prompt="The payment portal failed. Can I pay on the next working day?"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg><span><strong>Payment failed</strong><small>what happens next</small></span></button>
+                <button data-prompt="What is the policy for changing my programme?"><svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg><span><strong>Programme change</strong><small>explore the policy</small></span></button>
+              </div>
+            </div>
+          </div>
+          <form id="chat-form" class="composer">
+            <label class="visually-hidden" for="message">Your question</label>
+            <div class="composer-input">
+              <svg class="icon composer-icon" aria-hidden="true"><use href="#i-sparkle"/></svg>
+              <textarea id="message" placeholder="Ask Kaiju anything…" rows="1" maxlength="2000" required></textarea>
+              <button id="send" type="submit" class="send-button" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+            </div>
+            <p class="composer-note">Don’t include passwords or OTPs. Conversations are saved to your account; delete them any time from Chat history.</p>
+          </form>
+        </div>
+        <aside class="evidence-panel" aria-label="Response evidence"><p class="label">Behind the answer</p><h3>Evidence & activity</h3><p class="muted small">See the tools, policy excerpts and saved preferences used for each response.</p><div id="trace-content" class="trace-content"><div class="empty-evidence"><span aria-hidden="true">⌁</span><p>Your next answer’s evidence will appear here.</p></div></div></aside>
+      </section>
+
+      <section id="view-profile" class="view content-view" hidden>
+        <header class="section-heading"><div><p class="label">Your account</p><h2>My profile</h2></div><button class="secondary" type="button" data-prompt-view="What is my current fee status?">Ask about my fees</button></header>
+        <p class="view-description">Your official record in the fictional institute database. Kaiju reads the same record when you ask about fees or scholarships.</p>
+        <article class="profile-card">
+          <span class="avatar profile-avatar" id="profile-avatar" aria-hidden="true"></span>
+          <div class="profile-identity"><h3 id="profile-name"></h3><p class="muted" id="profile-id"></p></div>
+          <dl class="profile-facts">
+            <div><dt>Programme</dt><dd id="profile-programme"></dd></div>
+            <div><dt>Email</dt><dd id="profile-email"></dd></div>
+          </dl>
+        </article>
+        <div class="profile-grid">
+          <article class="profile-panel">
+            <div class="panel-head"><svg class="icon amber" aria-hidden="true"><use href="#i-receipt"/></svg><h3>Fees</h3><span id="fee-badge" class="badge"></span></div>
+            <p class="big-figure" id="fee-outstanding"></p><p class="small muted">outstanding</p>
+            <div class="progress" role="progressbar" aria-labelledby="fee-progress-label" aria-valuemin="0" aria-valuemax="100" id="fee-progress"><span id="fee-progress-bar"></span></div>
+            <p class="small muted" id="fee-progress-label"></p>
+            <p class="small" id="fee-due"></p>
+          </article>
+          <article class="profile-panel">
+            <div class="panel-head"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg><h3>Scholarship</h3><span id="scholarship-badge" class="badge"></span></div>
+            <p class="big-figure" id="scholarship-amount"></p><p class="small muted">awarded</p>
+            <p class="small" id="scholarship-name"></p>
+          </article>
+        </div>
+        <h3 class="audit-heading">Your activity</h3>
+        <div class="stat-grid">
+          <button class="stat-tile" type="button" data-view="chat" data-stat="conversations"><strong></strong><span>Saved chats</span></button>
+          <button class="stat-tile" type="button" data-view="tickets" data-stat="open_tickets"><strong></strong><span>Open requests</span></button>
+          <button class="stat-tile" type="button" data-view="approvals" data-stat="pending_approvals"><strong></strong><span>Pending approvals</span></button>
+          <button class="stat-tile" type="button" data-view="memory" data-stat="preferences"><strong></strong><span>Saved preferences</span></button>
+        </div>
+        <div class="settings-form profile-note"><h3>Need to change something?</h3><p class="muted">Your programme can be changed by asking Kaiju. You’ll review and confirm the exact change in Approvals before anything is updated. Name and email changes go through Student Services.</p><button class="primary" type="button" data-prompt-view="I want to change my programme.">Request a programme change</button></div>
+      </section>
+
+      <section id="view-memory" class="view content-view" hidden><header class="section-heading"><div><p class="label">Personal context</p><h2>Remembered facts</h2></div></header><p class="view-description">These preferences stay available in a new session. Only the allowed values below can be stored; you can delete them any time.</p><div id="memory-list" class="record-list"></div><form id="memory-form" class="settings-form"><h3>Remember a preference</h3><div class="form-row"><div><label for="memory-key">Preference</label><select id="memory-key"></select></div><div><label for="memory-value">Value</label><select id="memory-value"></select></div></div><label class="checkbox-label"><input id="memory-consent" type="checkbox" required> I want this preference remembered across sessions.</label><button class="primary" type="submit">Save preference</button></form></section>
+
+      <section id="view-approvals" class="view content-view" hidden><header class="section-heading"><div><p class="label">You’re in control</p><h2>Approvals</h2></div></header><p class="view-description">Review the exact change before confirming. Confirmed requests go to Student Services, and your record changes only after a staff member approves it. Unconfirmed requests expire after 30 minutes. Changes affect fictional demo records only.</p><div id="approvals-list" class="record-list"></div></section>
+
+      <section id="view-tickets" class="view content-view" hidden><header class="section-heading"><div><p class="label">Student services</p><h2>Support requests</h2></div><button class="secondary" data-view="chat">Ask to create a request</button></header><p class="view-description">Your requests to the finance, scholarship, academic or general support teams. Staff replies and status changes appear here. This demo stores requests locally; nothing is emailed to a real support office.</p><div id="tickets-list" class="record-list"></div></section>
+
+      <section id="view-activity" class="view content-view" hidden><header class="section-heading"><div><p class="label">Traceable support</p><h2>Traces & audit</h2></div><a class="button secondary" href="/api/export" download>Export evidence ↓</a></header><p class="view-description">Measurements from your own runs. Token counts come from Groq when reported. Chat transcripts and API keys are excluded from these records.</p><h3>Agent runs</h3><div id="traces-list" class="record-list"></div><h3 class="audit-heading">Audit trail</h3><div class="table-wrap"><table><thead><tr><th>Time</th><th>Action</th><th>Decision</th><th>Result</th></tr></thead><tbody id="audit-list"></tbody></table></div></section>
+    </main>
+  </div>
+
+  <div id="staff-workspace" class="staff-workspace" hidden>
+    <header class="staff-topbar">
+      <a class="brand" href="/" aria-label="Kaiju home"><img class="brand-logo" src="{{ url_for('static', filename='img/akou-logo.png') }}" alt="" width="44" height="44"><span class="brand-text"><strong>Kaiju</strong><small>Campus Desk staff console</small></span></a>
+      <nav class="staff-nav" aria-label="Staff navigation">
+        <button class="nav-item active" type="button" data-staff-view="tickets" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-inbox"/></svg> Support requests</button>
+        <button class="nav-item" type="button" data-staff-view="changes"><svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg> Programme changes <span id="change-count" class="count" hidden></span></button>
+        <button class="nav-item" type="button" data-staff-view="accounts" data-admin-only hidden><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg> Accounts</button>
+        <button class="nav-item" type="button" data-staff-view="audit" data-admin-only hidden><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg> Audit log</button>
+      </nav>
+      <div class="staff-account">
+        <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></button>
+        <span class="avatar" id="staff-avatar" aria-hidden="true"></span>
+        <div class="student-text"><strong id="staff-name"></strong><small id="staff-meta"></small></div>
+        <button id="staff-logout" class="secondary" type="button"><svg class="icon" aria-hidden="true"><use href="#i-logout"/></svg> Sign out</button>
+      </div>
+    </header>
+    <main class="content-view">
+      <section id="staff-view-tickets" class="staff-view"><header class="section-heading"><div><p class="label">Student services</p><h2>Support requests</h2></div><div class="filter"><label for="ticket-filter">Show</label><select id="ticket-filter"><option value="">All requests</option><option value="open">Open</option><option value="in_progress">In progress</option><option value="resolved">Resolved</option></select></div></header><p class="view-description">Requests students raised through Kaiju. Update the status as you work on them; students see the new status in their own list. Chat transcripts, fee records and saved preferences are never shown here.</p><div id="staff-tickets-list" class="record-list"></div></section>
+
+      <section id="staff-view-changes" class="staff-view" hidden><header class="section-heading"><div><p class="label">Student services</p><h2>Programme changes</h2></div><div class="filter"><label for="change-filter">Show</label><select id="change-filter"><option value="awaiting_staff">Awaiting review</option><option value="approved">Approved</option><option value="rejected">Rejected</option><option value="all">All reviewed</option></select></div></header><p class="view-description">Requests the student has already confirmed. Approving updates the student’s programme record immediately; rejecting leaves it unchanged. If the record changed since the request, approval is refused as stale.</p><div id="staff-changes-list" class="record-list"></div></section>
+
+      <section id="staff-view-accounts" class="staff-view" hidden><header class="section-heading"><div><p class="label">Administration</p><h2>Accounts</h2></div></header><p class="view-description">Fictional demo accounts in the local database. Passwords are stored as hashes and never shown.</p><h3>Students</h3><div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Programme</th><th>Email</th></tr></thead><tbody id="student-accounts"></tbody></table></div><h3 class="audit-heading">Staff</h3><div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Role</th><th>Email</th></tr></thead><tbody id="staff-accounts"></tbody></table></div></section>
+
+      <section id="staff-view-audit" class="staff-view" hidden><header class="section-heading"><div><p class="label">Administration</p><h2>Audit log</h2></div></header><p class="view-description">The latest 500 audit events across all accounts. Records hold metadata only: no chat text, passwords or API keys.</p><div class="table-wrap"><table><thead><tr><th>Time</th><th>Actor</th><th>Action</th><th>Target</th><th>Decision</th><th>Result</th></tr></thead><tbody id="admin-audit-list"></tbody></table></div></section>
+    </main>
+  </div>
+</body>
+</html>
