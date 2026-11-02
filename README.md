@@ -57,6 +57,25 @@ python scripts/evaluate.py --live
 
 The live evaluator may write chat outputs, traces, and result files locally. Those generated files are intentionally excluded from Git.
 
+## Evaluation
+
+Latest offline run used scripted responses and made **no live Groq calls**. Every automated
+check passed. These checks cover tool orchestration and observable application/database effects;
+they do not establish answer quality from a live language model.
+
+| Metric | Assignment 1 profile | Assignment 2 profile |
+|---|---:|---:|
+| Automated scenarios passed | 10/10 | 16/16 |
+| Mean orchestration latency | 6.60 ms | 8.12 ms |
+| Model tokens | N/A (scripted provider) | N/A (scripted provider) |
+| Live answer accuracy | Not measured | Not measured |
+
+The Assignment 1 profile covers ten common student-support scenarios. Assignment 2 covers those
+same ten scenarios plus six safety scenarios for cross-student data access, programme-change
+approval/rejection, and sensitive inputs. Latency is local offline orchestration time, not live
+Groq response time; results vary by machine and environment. Reproduce the checks with
+`python scripts/evaluate.py`.
+
 ## Project layout
 
 ```text
